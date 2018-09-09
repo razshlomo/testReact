@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 import './navstyle.css'
 
 export interface NavBarLinkProps {
@@ -14,7 +14,7 @@ export class NavBarLink extends React.Component<NavBarLinkProps, any> {
   }
 
   render() {
-    return <Link innerRef={() => this.state = { selectedPage: this.props.url }} to={this.props.url}>{this.props.text}</Link>;
+    return <Link activeClassName="active_page_link" to={this.props.url}>{this.props.text}</Link>;
   }
 }
  

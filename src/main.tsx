@@ -1,6 +1,8 @@
 import {
   BrowserRouter as Router,
   Route,
+  Redirect,
+  Switch
 } from "react-router-dom";
 import * as React from "react";
 import { render } from "react-dom";
@@ -26,9 +28,9 @@ class MyClass extends React.Component<{}, {}> {
 
 
   private static getClassFromName(className: string) {
-     if (Pages[className] === undefined || Pages[className] === null) {
-      throw new Error(`Class type of \'${className}\' is not in the store`);
-    } 
+    if (Pages[className] === undefined || Pages[className] === null) {
+      throw new Error(`Class type of \'${className}\' is not in the pages store`);
+    }
     return Pages[className];
   }
 
@@ -36,7 +38,7 @@ class MyClass extends React.Component<{}, {}> {
 
     const page = MyClass.getClassFromName(item.componentName);
 
-    return <Route exact key={item.url} path={item.url} component={page} />;
+    return <Route exact={item.exact} key={item.url} path={item.url} component={page} />;
   }
 
   render() {
@@ -44,7 +46,10 @@ class MyClass extends React.Component<{}, {}> {
       <Router>
         <div>
           <NavBar items={data} />
-          {this.routes}
+          <Switch>
+            {this.routes}
+            <Redirect from="*" to="/home" />
+          </Switch>
         </div>
       </Router>
     )

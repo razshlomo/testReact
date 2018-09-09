@@ -21,7 +21,6 @@ export class NavBarItem extends React.Component<NavBarItemProps, any> {
 
   constructor(props: NavBarItemProps) {
     super(props);
-    //var currentLocation = this.state.location.pathname
     console.log("this is the state = " + this.state)
   }
 

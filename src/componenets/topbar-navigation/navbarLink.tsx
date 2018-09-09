@@ -17,3 +17,4 @@ export class NavBarLink extends React.Component<NavBarLinkProps, any> {
     return <Link innerRef={() => this.state = { selectedPage: this.props.url }} to={this.props.url}>{this.props.text}</Link>;
   }
 }
+ 

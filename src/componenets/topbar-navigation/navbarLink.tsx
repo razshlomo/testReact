@@ -5,18 +5,15 @@ import './navstyle.css'
 export interface NavBarLinkProps {
   url: string;
   text: string;
-  OnNavigationClick: React.MouseEventHandler<HTMLAnchorElement>
 }
 
 export class NavBarLink extends React.Component<NavBarLinkProps, any> {
-  OnNavigationClick: React.MouseEventHandler<HTMLAnchorElement>
-  
+
   constructor(props) {
-    super(props);  
-    this.OnNavigationClick =props.OnNavigationClick
+    super(props);
   }
- 
-  render() {  
-    return <Link  to={this.props.url}>{this.props.text}</Link>;
+
+  render() {
+    return <Link innerRef={() => this.state = { selectedPage: this.props.url }} to={this.props.url}>{this.props.text}</Link>;
   }
 }

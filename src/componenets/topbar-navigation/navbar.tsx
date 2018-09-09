@@ -3,19 +3,17 @@ import * as NavBarItem from "./navbarItem";
 
 interface NavBarProps {
   items: Array<any>;
-  OnNavigationClick: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 export class NavBar extends React.Component<NavBarProps, any> {
-  items: Array<any>;
+  items: Array<JSX.Element>;
 
   private generateItem(item: NavBarItem.NavBarItemProps) {
     return (
       <NavBarItem.NavBarItem
+        key={item.url}
         text={item.text}
         url={item.url}
-        submenu={item.submenu}
-        OnNavigationClick={item.OnNavigationClick}
       />
     );
   }

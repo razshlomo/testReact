@@ -7,10 +7,6 @@ import {
 import * as React from "react";
 import { render } from "react-dom";
 import { NavBar } from "./componenets/topbar-navigation/navbar";
-import {
-  data,
-  RouteData
-} from "./componenets/topbar-navigation/navigation-data";
 import "./app.css";
 import * as Pages from "./componenets/pages"
 
@@ -23,7 +19,7 @@ class MyClass extends React.Component<{}, {}> {
   constructor(props) {
     super(props);
     this.pagesStore = {};
-    this.routes = data.map(this.generateRouteFromRouteData);
+    this.routes = Pages.data.map(this.generateRouteFromRouteData);
   }
 
 
@@ -34,7 +30,7 @@ class MyClass extends React.Component<{}, {}> {
     return Pages[className];
   }
 
-  private generateRouteFromRouteData(item: RouteData) {
+  private generateRouteFromRouteData(item: Pages.RouteData) {
 
     const page = MyClass.getClassFromName(item.componentName);
 
@@ -45,7 +41,7 @@ class MyClass extends React.Component<{}, {}> {
     return (
       <Router>
         <div>
-          <NavBar items={data} />
+          <NavBar items={Pages.data} />
           <Switch>
             {this.routes}
             <Redirect from="*" to="/home" />

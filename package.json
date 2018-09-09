@@ -1,0 +1,32 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "start npm run webpack && start npm run server",
+    "webpack": "webpack --progress --watch",
+    "server": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "css-loader": "^1.0.0",
+    "lite-server": "^2.4.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "style-loader": "^0.23.0",
+    "ts-loader": "^4.5.0",
+    "typescript": "^3.0.1",
+    "webpack-cli": "^3.1.0",
+    "@types/react-router-dom": "^4.3.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^4.3.1",
+    "webpack": "^4.17.1"
+  }
+}

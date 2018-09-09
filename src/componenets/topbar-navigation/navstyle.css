@@ -1,0 +1,57 @@
+.menu__wrapper1{
+  width: 100%;
+  height: 50px;
+  background-color: #294E80;
+}
+.menu__wrapper {
+  float: right;
+  position: relative;
+  left: -50%;
+  text-align: left;
+}
+
+.menu {
+  list-style: none;
+  position: relative;
+  left: 50%; 
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  height: fit-content;
+  margin: 0;
+  align-content: center;
+}
+
+
+.menu li {
+  /*display: inline-block;*/
+  /*margin: -1px -1px 0 0;*/
+  float: left;
+  position: relative;
+}
+
+.menu li a {
+  display: block;
+
+  /* My basic styling. I'm just giving them a black text, with a black border, and center the text in the box. */
+  text-decoration: none;
+  /*border: 1px solid black;*/
+  text-align: center;
+
+  /* Fixed size is also just me. 
+       Not fixing it just make huge boxes when you have submenus */
+  width: 100px;
+  line-height: 50px;
+  color: white
+}
+
+.menu li:hover a {
+  color: orange
+}
+
+.menu li:hover {
+  /* On hover, we get it back to its basic spot*/
+  left: 0;
+  /* And change the opacity to a fully visible one */
+  opacity: 1;
+}
